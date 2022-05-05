@@ -8,10 +8,10 @@ TIME = 10
 REQS_PER_SEC = 1000
 LOADS = list(range(200, 2200, 200))
 
-x = []
-p50 = []
-p90 = []
-p99 = []
+x = [0]
+p50 = [0]
+p90 = [0]
+p99 = [0]
 
 for load in LOADS:
     # Make a request flow:
@@ -32,6 +32,8 @@ for load in LOADS:
     p99.append(np.percentile(latencies, 99))
 
     #pprint(latencies)
+
+pprint(p99)
 
 p50_line, = plt.plot(x, p50)
 p90_line, = plt.plot(x, p90)
