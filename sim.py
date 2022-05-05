@@ -33,8 +33,6 @@ for load in LOADS:
 
     #pprint(latencies)
 
-pprint(p99)
-
 p50_line, = plt.plot(x, p50)
 p90_line, = plt.plot(x, p90)
 p99_line, = plt.plot(x, p99)
@@ -42,6 +40,11 @@ p99_line, = plt.plot(x, p99)
 p50_line.set_label("p50")
 p90_line.set_label("p90")
 p99_line.set_label("p99")
+
+plt.title("Latency percentiles of simulated worker with infinite queue")
+plt.xlabel("Offered load (req/s)")
+plt.ylabel("Latency (s)")
+plt.tight_layout()
 
 plt.legend()
 plt.grid()
