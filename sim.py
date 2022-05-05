@@ -48,6 +48,6 @@ plt.tight_layout()
 
 plt.legend()
 plt.grid()
-plt.xticks(LOADS)
+plt.xticks(x)
 plt.show()
 
